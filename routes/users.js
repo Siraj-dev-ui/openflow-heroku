@@ -6,6 +6,9 @@ require('dotenv/config');
 const secretKey = process.env.SECRET_KEY;
 
 // Get all users
+router.get('/api/test', async (req, res) => {
+  res.json('testing');
+});
 router.get('/api/getUsers', async (req, res) => {
   const users = await userSchema.find();
   res.json(users);
