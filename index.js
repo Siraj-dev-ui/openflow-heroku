@@ -24,11 +24,14 @@ app.use(questionRoute);
 app.use(answerRoute);
 
 mongoose
-  .connect(process.env.DB_CONNECTION, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName: 'openFlow',
-  })
+  .connect(
+    'mongodb+srv://221244:Q8tdWOvA3kpMAb22@t3lecturefour.g66nmwd.mongodb.net/?retryWrites=true&w=majority',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      dbName: 'openFlow',
+    }
+  )
   .then(() => console.log('Connected to openFlow DB'))
   .catch((err) => {
     console.log('No Connection. Reason: ' + err);
